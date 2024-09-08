@@ -1,0 +1,24 @@
+<div class="conjugation-container">
+  <h2>Conjugaison du verbe</h2>
+  <div class="verb-input">
+    <input [(ngModel)]="verb" placeholder="Entrez un verbe">
+    <button (click)="getConjugation()">Conjuguer</button>
+  </div>
+
+  <div *ngIf="conjugation" class="conjugation-result">
+    <h3>Conjugaison pour le verbe : {{ verb }}</h3>
+
+    <div *ngFor="let mode of getModes()" class="mode-section">
+      <h4>{{ mode | titlecase }}</h4>
+      <div *ngFor="let temps of getTemps(mode)" class="temps-section">
+        <h5>{{ temps | titlecase }}</h5>
+        <table>
+          <tr *ngFor="let personne of getPersonnes(mode, temps)">
+            <td class="personne">{{ getPersonneLabel(personne) }}</td>
+            <td class="conjugue">{{ conjugation.verb[mode][temps][personne] }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+/* Style pour la barre de navigation */
+.navbar {
+  background-color: #007bff;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold; /* Rendre le texte du logo/brand gras */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold; /* Rendre le texte des liens du menu gras */
+  margin-right: 10px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Effet de transition */
+}
+
+.navbar .nav-link:hover {
+  color: #d1e7ff; /* Changement de couleur lors du survol */
+  transform: scale(1.1); /* Agrandir légèrement lors du survol */
+}
+
+.navbar .nav-link:active {
+  transform: scale(0.95); /* Réduire temporairement lors du clic */
+}
+
+.navbar .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold; /* Rendre le texte du bouton Logout gras */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .btn-danger:hover {
+  background-color: #c82333;
+  opacity: 0.9;
+  transform: scale(1.05); /* Agrandir légèrement lors du survol */
+}
+
+.navbar .btn-danger:active {
+  transform: scale(0.95); /* Réduire temporairement lors du clic */
+}
+
+.container {
+  margin-top: 50px;
+}

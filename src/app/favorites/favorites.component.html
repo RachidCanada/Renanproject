@@ -1,0 +1,46 @@
+<div class="favorites-container card p-4 shadow">
+  <h3 class="text-center mb-4">Gérer les Verbes Favoris</h3>
+
+  <!-- Formulaire pour ajouter un nouveau favori -->
+  <div class="form-group mb-3">
+    <input [(ngModel)]="newFavorite" placeholder="Entrez un verbe à ajouter aux favoris" class="form-control" />
+    <button (click)="addFavorite()" class="btn btn-primary mt-2 w-100">Ajouter aux Favoris</button>
+  </div>
+
+  <!-- Formulaire pour obtenir un favori spécifique -->
+  <div class="form-group mb-3">
+    <input [(ngModel)]="favoriteVerbId" placeholder="Entrez l'ID d'un favori pour le récupérer" class="form-control" />
+    <button (click)="getFavorite(favoriteVerbId)" class="btn btn-info mt-2 w-100">Obtenir le Favori</button>
+  </div>
+
+  <!-- Affichage du favori récupéré -->
+  <div *ngIf="retrievedFavorite" class="mt-4 p-3 border rounded">
+    <h4>Favori Récupéré</h4>
+    <p>{{ retrievedFavorite.verb }}</p> <!-- Assurez-vous de montrer la propriété correcte -->
+  </div>
+
+  <!-- Bouton pour afficher tous les favoris -->
+  <div class="form-group mt-3">
+    <button (click)="loadFavorites()" class="btn btn-secondary w-100">Afficher Tous les Favoris</button>
+  </div>
+
+  <!-- Affichage des messages d'erreur ou de succès -->
+  <div *ngIf="message" class="alert mt-3" [ngClass]="{'alert-success': message.includes('succès'), 'alert-danger': message.includes('Erreur')}">
+    {{ message }}
+  </div>
+
+  <!-- Liste des verbes favoris -->
+  <div *ngIf="favoriteVerbs.length > 0" class="favorites-list mt-3">
+    <h4>Verbes Favoris</h4>
+    <ul class="list-group">
+      <li *ngFor="let fav of favoriteVerbs" class="list-group-item d-flex justify-content-between align-items-center">
+        {{ fav.verb }}
+        <button (click)="deleteFavorite(fav.uid)" class="btn btn-danger btn-sm">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="favoriteVerbs.length === 0 && !retrievedFavorite">
+    <p class="text-center mt-4">Aucun favori trouvé.</p>
+  </div>
+</div>

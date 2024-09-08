@@ -1,0 +1,19 @@
+<div class="verbs-container card p-4 shadow">
+  <h3 class="text-center mb-4">Rechercher un Verbe</h3>
+  
+  <div class="input-group mb-3">
+    <input [(ngModel)]="verb" class="form-control" placeholder="Entrez un verbe" />
+    <button class="btn btn-primary" (click)="getVerbDetails()">Obtenir les détails du verbe</button>
+  </div>
+
+  <!-- Affichage des messages d'erreur ou de succès -->
+  <div *ngIf="message" class="alert mt-3" [ngClass]="{'alert-success': message.includes('succès'), 'alert-danger': message.includes('Erreur')}">
+    {{ message }}
+  </div>
+
+  <!-- Affichage des détails du verbe -->
+  <div *ngIf="verbDetails" class="verb-details mt-4 p-3 border rounded">
+    <h4>Détails du Verbe: <strong>{{ verb }}</strong></h4>
+    <pre>{{ verbDetails | json }}</pre>
+  </div>
+</div>

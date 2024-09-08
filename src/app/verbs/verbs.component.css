@@ -1,0 +1,46 @@
+.verbs-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.verbs-container h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+}
+
+.verb-details {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
